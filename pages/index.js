@@ -1,6 +1,16 @@
 import Head from "next/head";
+import { useState } from "react";
+import PopularCard from "../components/PopularCard";
+import PricingCard from "../components/PricingCard";
+import classes from "../styles/Home.module.scss";
 
 export default function Home() {
+    const [monthly, setMonthly] = useState(false);
+
+    const periodChangeHandler = (e) => {
+        setMonthly(e.target.checked);
+    };
+
     return (
         <>
             <Head>
@@ -12,7 +22,66 @@ export default function Home() {
                 <link rel="icon" href="/favicon.png" />
             </Head>
 
-            <main>hello world</main>
+            <>
+                <main>
+                    <div className={classes.Header}>
+                        <h1 className={classes.Heading}>Our Pricing</h1>
+
+                        <div className={classes.Switch}>
+                            <span>Annually</span>
+                            <div className={classes.Toggle}>
+                                <label htmlFor="period">
+                                    <input
+                                        type="checkbox"
+                                        name="period"
+                                        id="period"
+                                        onChange={periodChangeHandler}
+                                    />
+                                    <span
+                                        className={classes.dot}
+                                        style={{
+                                            transform: monthly
+                                                ? "translateX(24.5px)"
+                                                : "none",
+                                        }}
+                                    />
+                                </label>
+                            </div>
+                            <span>Monthly</span>
+                        </div>
+                    </div>
+
+                    <section className={classes.pricingContainer}>
+                        <PricingCard
+                            heading="Basic"
+                            price={monthly ? "19.99" : "199.99"}
+                            features={[
+                                "500 GB Storage",
+                                "2 Users Allowed",
+                                "Send up to 3 GB",
+                            ]}
+                        />
+                        <PopularCard
+                            heading="Professional"
+                            price={monthly ? "24.99" : "249.99"}
+                            features={[
+                                "1 TB Storage",
+                                "5 Users Allowed",
+                                "Send up to 10 GB",
+                            ]}
+                        />
+                        <PricingCard
+                            heading="Master"
+                            price={monthly ? "39.99" : "399.99"}
+                            features={[
+                                "2 TB Storage",
+                                "10 Users Allowed",
+                                "Send up to 20 GB",
+                            ]}
+                        />
+                    </section>
+                </main>
+            </>
         </>
     );
 }

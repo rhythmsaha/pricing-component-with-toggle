@@ -18,12 +18,17 @@ body {
     font-family: "Montserrat", sans-serif;
     min-height: 100vh;
     background-color: var(--very-light-grayish-blue);
-    background-image: url("/images/bg-bottom.svg"), url("/images/bg-top.svg");
+
+    background-image: url("/images/bg-top.svg");
     background-repeat: no-repeat;
-    background-position: bottom left, top right;
-    background-size: 50%;
+    background-position: 150% top;
+    background-size: 60%;
 
     @media screen and (min-width: 1024px) {
+        background-image: url("/images/bg-bottom.svg"),
+            url("/images/bg-top.svg");
+        background-repeat: no-repeat;
+        background-position: bottom left, top right;
         background-size: auto;
     }
 }
@@ -33,6 +38,8 @@ a {
     text-decoration: none;
 }
 
-* {
-    box-sizing: border-box;
+main {
+    width: 90%;
+    margin: auto;
+    max-width: 1196px;
 }

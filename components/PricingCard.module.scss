@@ -1,0 +1,67 @@
+.Card {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 1rem;
+}
+
+.heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--grayish-blue);
+}
+
+.Price {
+    padding: 1.5rem 0;
+    width: 100%;
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.486);
+    font-size: 3.7rem;
+    color: var(--dark-grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    span {
+        font-size: 2.5rem;
+    }
+}
+
+.Features {
+    text-align: center;
+    width: 100%;
+
+    li {
+        list-style: none;
+        width: 100%;
+        padding: 1.2rem;
+        color: var(--grayish-blue);
+        border-bottom: 1px solid hsla(234, 14%, 74%, 0.486);
+    }
+}
+
+.Btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgb(163, 168, 240);
+    background: linear-gradient(
+        90deg,
+        rgba(163, 168, 240, 1) 0%,
+        rgba(105, 111, 221, 1) 100%
+    );
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+
+    &:hover {
+        background: white;
+        color: rgba(105, 111, 221, 1);
+        border: 1px solid rgba(105, 111, 221, 1);
+    }
+}
